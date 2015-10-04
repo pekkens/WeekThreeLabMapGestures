@@ -12,16 +12,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="pinPDF" id="bY3-V4-Ich">
-                                <rect key="frame" x="131" y="150" width="41" height="58"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <animations/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="IMs-q2-c4L" appends="YES" id="D3O-Lh-b69"/>
-                                    <outletCollection property="gestureRecognizers" destination="hCa-UM-93o" appends="YES" id="oUC-52-sqV"/>
-                                </connections>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Map View" id="FHz-sW-ZI5">
                                 <rect key="frame" x="-64" y="-117" width="449" height="801"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -31,11 +21,23 @@
                                     <outletCollection property="gestureRecognizers" destination="1cd-qe-DRc" appends="YES" id="VyU-zB-zAQ"/>
                                 </connections>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="pinPDF" id="bY3-V4-Ich">
+                                <rect key="frame" x="181" y="219" width="41" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="IMs-q2-c4L" appends="YES" id="D3O-Lh-b69"/>
+                                    <outletCollection property="gestureRecognizers" destination="hCa-UM-93o" appends="YES" id="oUC-52-sqV"/>
+                                    <outletCollection property="gestureRecognizers" destination="P9W-Cy-ogA" appends="YES" id="E2z-a7-dZv"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="longPressGesture" destination="P9W-Cy-ogA" id="hbP-EQ-Ne2"/>
                         <outlet property="mapImageView" destination="FHz-sW-ZI5" id="map-cg-nzg"/>
                         <outlet property="mapPinchGesture" destination="1cd-qe-DRc" id="Tsd-qw-qDk"/>
                         <outlet property="pinImageView" destination="bY3-V4-Ich" id="eJM-lO-ols"/>
@@ -59,6 +61,11 @@
                         <action selector="pinOnTap:" destination="BYZ-38-t0r" id="p20-hH-z4F"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="P9W-Cy-ogA">
+                    <connections>
+                        <action selector="onPinLongPress:" destination="BYZ-38-t0r" id="k5N-4A-fMs"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="161" y="407"/>
         </scene>

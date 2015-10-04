@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var pinPanGesture: UIPanGestureRecognizer!
     @IBOutlet var mapPinchGesture: UIPinchGestureRecognizer!
     @IBOutlet weak var mapImageView: UIImageView!
+    @IBOutlet var longPressGesture: UILongPressGestureRecognizer!
     
     var pinImageViewInitialCenter: CGPoint!
     
@@ -66,8 +67,14 @@ class ViewController: UIViewController {
         let scale = sender.scale
         print("Scale: \(scale)")
         mapImageView.transform = CGAffineTransformMakeScale(scale, scale)
+    }
+    
+    
+    @IBAction func onPinLongPress(sender: UILongPressGestureRecognizer) {
         
-        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.pinImageView.center.y = -50
+        }
     }
 }
 
