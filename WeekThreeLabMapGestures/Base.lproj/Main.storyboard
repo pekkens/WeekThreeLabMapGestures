@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Map View" id="FHz-sW-ZI5">
-                                <rect key="frame" x="-83" y="-145" width="471" height="837"/>
+                                <rect key="frame" x="-93" y="-135" width="471" height="837"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
@@ -21,15 +21,28 @@
                                 <rect key="frame" x="180" y="228" width="41" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="IMs-q2-c4L" appends="YES" id="D3O-Lh-b69"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="pinImageView" destination="bY3-V4-Ich" id="eJM-lO-ols"/>
+                        <outlet property="pinPanGesture" destination="IMs-q2-c4L" id="Pez-ge-HIG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="IMs-q2-c4L">
+                    <connections>
+                        <action selector="onPInPan:" destination="BYZ-38-t0r" id="iPF-pn-0bL"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="162" y="406"/>
+            <point key="canvasLocation" x="161" y="407"/>
         </scene>
     </scenes>
     <resources>
